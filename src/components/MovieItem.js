@@ -8,6 +8,7 @@ export default function MovieItem(props) {
         <div className="movie-item__container">
             <Link className="movie-item__link" to={`/movie/${id}`}>
                 <img
+                    alt="movie poster"
                     className="movie-item__image"
                     src={`https://image.tmdb.org/t/p/original/${poster_path}`}
                 />
