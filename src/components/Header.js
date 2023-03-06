@@ -46,9 +46,11 @@ export default function Header({handleMenuClicked}) {
                                                    onError={(e) => e.target.src = EMPTY_IMAGE}
                                                    alt="movie poster"
                                                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}/>
-                                    <div className="header__searchbar_autocomplete_item_text_container">
-                                        <h4  className="header__searchbar_autocomplete_item_title"> {movie.title}</h4>
-                                        <span  className="header__searchbar_autocomplete_item_year"> {new Date(movie.release_date).getFullYear()}</span>
+                                    <div
+                                        className="header__searchbar_autocomplete_item_text_container">
+                                        <h4 className="header__searchbar_autocomplete_item_title"> {movie.title}</h4>
+                                        <span
+                                            className="header__searchbar_autocomplete_item_year"> {new Date(movie.release_date).getFullYear()}</span>
                                     </div>
 
                                 </div>
