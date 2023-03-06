@@ -12,7 +12,7 @@ export default function useSearchDebounce(value, delay) {
         return () => {
             clearTimeout(handler);
         };
-    }, [value, delay]);
+    }, [value, delay, setDebouncedValue]);
 
     return debouncedValue;
 }
