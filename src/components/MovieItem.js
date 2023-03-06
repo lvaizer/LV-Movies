@@ -2,8 +2,10 @@ import '../css/MovieItem.css'
 import {Link} from "react-router-dom";
 import Loader from "./Loader";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {EMPTY_IMAGE} from "../utilities/Constants";
 
 export default function MovieItem(props) {
+
     const {id, original_title, poster_path, release_date, vote_average} = props;
 
     return (
@@ -12,6 +14,7 @@ export default function MovieItem(props) {
                 <LazyLoadImage
                     className="movie-item__image"
                     alt="movie poster"
+                    onError={(e) => e.target.src = EMPTY_IMAGE}
                     placeholder={<Loader/>}
                     src={`https://image.tmdb.org/t/p/original/${poster_path}`}
                 />

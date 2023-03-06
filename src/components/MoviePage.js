@@ -1,9 +1,10 @@
 import '../css/moviePage.css';
 import {Link, useParams} from "react-router-dom";
-import {useGetMovie} from "../Queries";
+import {useGetMovie} from "../utilities/Queries";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Loader from "./Loader";
+import {EMPTY_IMAGE} from "../utilities/Constants";
 
 export default function MoviePage() {
     const {id} = useParams();
@@ -24,7 +25,7 @@ export default function MoviePage() {
         return date.toLocaleDateString("en-US", dateOptions)
     }
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <Loader/>;
 
     if (error) return <div>Error</div>;
 
@@ -35,6 +36,7 @@ export default function MoviePage() {
                     className="moviePage__image"
                     alt="movie poster"
                     placeholder={<Loader/>}
+                    onError={(e) => e.target.src = EMPTY_IMAGE}
                     src={`https://image.tmdb.org/t/p/original/${movie['backdrop_path']}`}
                 />
                 <div className="moviePage__footer"/>
@@ -43,6 +45,7 @@ export default function MoviePage() {
             <div className="moviePage__details">
                 <LazyLoadImage
                     className="moviePage__details_image"
+                    onError={(e) => e.target.src = EMPTY_IMAGE}
                     alt="movie poster"
                     placeholder={<Loader/>}
                     src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie['poster_path']}`}/>

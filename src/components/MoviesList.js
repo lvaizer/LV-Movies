@@ -1,6 +1,10 @@
 import '../css/moviesList.css'
 import MovieItem from "./MovieItem";
-import {useGetNowPlayingMovies, useGetPopularMovies, useGetTopRatedMovies} from "../Queries";
+import {
+    useGetNowPlayingMovies,
+    useGetPopularMovies,
+    useGetTopRatedMovies
+} from "../utilities/Queries";
 import Loader from "./Loader";
 import {useState} from "react";
 

@@ -6,6 +6,7 @@ const MOVIE_URL = BASE_URL + 'movie/';
 const TOP_MOVIES_URL = BASE_URL + 'movie/top_rated/';
 const POPULAR_MOVIES_URL = BASE_URL + 'movie/popular/';
 const NOW_PLAYING_MOVIES_URL = BASE_URL + 'movie/now_playing/';
+const SEARCH_MOVIES_URL = BASE_URL + 'search/movie';
 
 export const useGetMovie = (id) =>
     useQuery(
@@ -37,5 +38,13 @@ export const useGetTopRatedMovies = (start) =>
         ({pageParam = 1}) => axios(TOP_MOVIES_URL + '?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + pageParam).then(res => res.data),
         {
             enabled: start,
+            getNextPageParam: (lastPage, allPages) => allPages.length + 1
+        });
+
+export const useSearchMovies = (query) =>
+    useInfiniteQuery(
+        ['search', query],
+        ({pageParam = 1}) => axios(SEARCH_MOVIES_URL + '?query=' + query + '&api_key=' + process.env.REACT_APP_API_KEY + '&page=' + pageParam).then(res => res.data),
+        {
             getNextPageParam: (lastPage, allPages) => allPages.length + 1
         });
