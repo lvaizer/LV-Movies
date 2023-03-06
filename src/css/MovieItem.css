@@ -2,6 +2,12 @@
     max-width: 200px;
 }
 
+@media (max-width: 768px) {
+    .movie-item__container {
+        max-width: unset;
+    }
+}
+
 .movie-item__link {
     text-decoration: none;
     color: black;

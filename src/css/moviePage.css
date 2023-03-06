@@ -40,6 +40,13 @@
     margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+    .moviePage__details {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
+
 .moviePage__details_image {
     width: 190px;
     height: 285px;
@@ -49,6 +56,12 @@
     margin-top: -140px;
     z-index: 9;
     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 30%);
+}
+
+@media (max-width: 768px) {
+    .moviePage__details_image {
+        margin: -140px auto 0;
+    }
 }
 
 .moviePage__details_title {

@@ -1,3 +1,7 @@
+.movies_list {
+    margin-top: 95px;
+}
+
 .movies_list__container {
     padding: 2rem;
     display: grid;
@@ -5,10 +9,15 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
+@media (max-width: 768px) {
+    .movies_list__container {
+        justify-items: center;
+    }
+}
+
 .movies_list__tabs_container {
     display: flex;
     padding-left: 2rem;
-    padding-top: 2rem;
 }
 
 .movies_list__tabs_tab {

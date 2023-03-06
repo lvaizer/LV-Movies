@@ -82,7 +82,7 @@ export default function MoviesList() {
     if (isError) return <div>Error occurred please try again later :(</div>
 
     return (
-        <div>
+        <div className="movies_list">
             <div className="movies_list__tabs_container">
                 <div className={`movies_list__tabs_tab ${getTabActiveClass(NOW_PLAYING)}`}
                      onClick={() => handleTabClicked(NOW_PLAYING)}>

@@ -1,3 +1,43 @@
+.navbar__overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4117647058823529);
+    transition: .3s;
+    z-index: 100;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    z-index: 9999;
+    transition-duration: .2s;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        transform: translateX(-250px);
+    }
+
+    .navbar.open {
+        transform: translateX(0px);
+    }
+
+    .navbar__overlay.open {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 .navbar__container {
     height: 100%;
     background: hsla(0, 0%, 0%, 50%);
@@ -11,7 +51,6 @@
     transition-duration: .2s;
     overflow-y: auto;
     overflow-x: hidden;
-
 }
 
 .navbar__item {
