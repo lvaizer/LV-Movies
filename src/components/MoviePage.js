@@ -29,12 +29,14 @@ export default function MoviePage() {
         <>
             <div className="moviePage__poster">
                 <img className="moviePage__image" alt="movie poster"
+                     loading="lazy"
                      src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
                 <div className="moviePage__footer"/>
                 <div className="moviePage__gradient"/>
             </div>
             <div className="moviePage__details">
                 <img className="moviePage__details_image"
+                     loading="lazy"
                      alt="movie poster"
                      src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}/>
                 <div className="moviePage__details_container">
