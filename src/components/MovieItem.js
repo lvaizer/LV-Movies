@@ -1,5 +1,7 @@
 import '../css/MovieItem.css'
 import {Link} from "react-router-dom";
+import Loader from "./Loader";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 export default function MovieItem(props) {
     const {id, original_title, poster_path, release_date, vote_average} = props;
@@ -7,10 +9,10 @@ export default function MovieItem(props) {
     return (
         <div className="movie-item__container">
             <Link className="movie-item__link" to={`/movie/${id}`}>
-                <img
-                    loading="lazy"
-                    alt="movie poster"
+                <LazyLoadImage
                     className="movie-item__image"
+                    alt="movie poster"
+                    placeholder={<Loader/>}
                     src={`https://image.tmdb.org/t/p/original/${poster_path}`}
                 />
                 <div className="movie-item__footer">
