@@ -28,11 +28,9 @@ export const useGetPopularMovies = (start) =>
         ({pageParam = 1}) => axios(POPULAR_MOVIES_URL + '?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + pageParam).then(res => res.data),
         {
             enabled: start,
-            getNextPageParam: (lastPage, allPages) => {
-                console.log(allPages)
-                return allPages.length + 1;
-            }
+            getNextPageParam: (lastPage, allPages) => allPages.length + 1
         });
+
 export const useGetTopRatedMovies = (start) =>
     useInfiniteQuery(
         ['top_rated'],
