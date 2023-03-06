@@ -1,0 +1,25 @@
+.navbar__container {
+    height: 100%;
+    background: hsla(0, 0%, 0%, 50%);
+}
+
+.navbar__menu {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition-duration: .2s;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.navbar__item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #e7e7e7;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}

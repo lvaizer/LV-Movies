@@ -1,0 +1,141 @@
+.moviePage__poster {
+    position: relative;
+    height: 365px;
+}
+
+.moviePage__image {
+    object-position: 50% 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.moviePage__footer {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 3rem;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+}
+
+.moviePage__gradient {
+    background: linear-gradient(rgba(0, 0, 0, .4), transparent);
+    position: absolute;
+    top: 0;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.moviePage__details {
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: flex-end;
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.moviePage__details_image {
+    width: 190px;
+    height: 285px;
+    background: 0 0;
+    border-radius: 30px;
+    min-height: 285px;
+    margin-top: -140px;
+    z-index: 9;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 30%);
+}
+
+.moviePage__details_title {
+    white-space: pre-wrap;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.moviePage__details_info {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.moviePage__details_info_genres {
+    margin-bottom: .75rem;
+}
+
+.moviePage__details_info_genres_item {
+    display: inline-flex;
+    margin-top: .2rem;
+    background-color: white;
+    margin-right: .75rem;
+    padding: .1rem .5rem;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.moviePage__details_info_genres_item:active {
+    color: black;
+}
+
+.moviePage__details_info_genres_item:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.moviePage__details_info_date {
+    font-size: 12px;
+    color: #808191;
+    padding-left: .3rem;
+}
+
+.moviePage__details_trailer {
+    display: flex;
+}
+
+.moviePage__details_trailer_button_container {
+    display: flex;
+    align-items: center;
+}
+
+.moviePage__details_trailer_button {
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 RGB(0 0 0/10%), 0 1px 3px 0 RGB(0 0 0/8%);
+    transition: 200ms;
+}
+
+.moviePage__details_trailer_button:hover {
+    background-color: hsl(0, 0%, 0%);
+}
+
+.moviePage__details_trailer_button svg {
+    width: 15px;
+    flex-shrink: 0;
+    margin-right: 4px;
+    padding: 0;
+}
+
+.moviePage__overview {
+    padding: 0 2rem;
+}
+
+.moviePage__overview h2 {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.moviePage__overview p {
+    font-weight: 100;
+    color: #757685;
+}

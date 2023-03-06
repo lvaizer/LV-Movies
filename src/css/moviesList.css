@@ -1,0 +1,25 @@
+.movies_list__container {
+    padding: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.movies_list__tabs_container {
+    display: flex;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+.movies_list__tabs_tab {
+    border-radius: .3rem;
+    border: 1px solid black;
+    margin-right: 1rem;
+    padding: .2rem .3rem;
+    cursor: pointer;
+}
+
+.movies_list__tabs_tab.active {
+    background-color: #4784ff;
+    color: white;
+}

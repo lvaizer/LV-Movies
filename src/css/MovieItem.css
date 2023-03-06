@@ -1,0 +1,63 @@
+.movie-item__container {
+    max-width: 200px;
+}
+
+.movie-item__link {
+    text-decoration: none;
+    color: black;
+}
+
+.movie-item__image {
+    border-radius: 15px;
+    background-color: transparent;
+    margin: -1px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 30%);
+    width: 100%;
+    min-height: 195px;
+    transition: all .2s ease;
+    overflow: hidden;
+}
+
+.movie-item__image:hover {
+    opacity: .7;
+    transition: all .4s ease;
+    transform: scale(1.1);
+}
+
+.movie-item__footer {
+
+}
+
+.movie-item__title {
+    margin: 0.5rem 0;
+    text-align: start;
+    font-size: 1em;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.movie-item__meta_container {
+    font-size: .9em;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    color: #6c757d;
+}
+
+.movie-item__meta_container__year {
+    display: inline-block;
+    float: right;
+    font-style: normal;
+    border: 1px solid #868e96;
+    border-radius: .1rem;
+    padding: .1rem .4rem;
+    font-size: .8em;
+    align-self: center;
+}
+
+.movie-item__meta_container__rank {
+
+}
