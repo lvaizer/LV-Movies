@@ -32,11 +32,6 @@ export default function MoviesList() {
         isLoading: topRatedLoading,
         error: topRatedError
     } = useGetTopRatedMovies(selectedTab === TOP_RATED);
-    useEffect(() => {
-
-
-    }, [])
-
 
     const isLoading = topRatedLoading || popularLoading || nowPlayingLoading;
 
