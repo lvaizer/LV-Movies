@@ -6,7 +6,6 @@ import Loader from "./Loader";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {EMPTY_IMAGE} from "../utilities/Constants";
 
-const array = ['1', '2', '3', '4'];
 export default function Header({handleMenuClicked}) {
     const [search, setSearch] = useState('');
 
@@ -14,8 +13,6 @@ export default function Header({handleMenuClicked}) {
 
     const {
         data,
-        isLoading,
-        error
     } = useSearchMovies(debouncedSearchTerm);
 
     return (
