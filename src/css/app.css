@@ -13,5 +13,6 @@
 
 .main_container {
     margin-left: 250px;
+    padding-bottom: 1rem;
     text-align: start;
 }
