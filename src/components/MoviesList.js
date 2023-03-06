@@ -2,7 +2,7 @@ import '../css/moviesList.css'
 import MovieItem from "./MovieItem";
 import {useGetNowPlayingMovies, useGetPopularMovies, useGetTopRatedMovies} from "../Queries";
 import Loader from "./Loader";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const NOW_PLAYING = 'NOW_PLAYING';
 const POPULAR = 'POPULAR';
