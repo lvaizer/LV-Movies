@@ -1,20 +1,22 @@
 import '../css/header.css';
 import {useState} from "react";
 import useSearchDebounce from "../utilities/useSearchDebounce";
-// noinspection ES6CheckImport
-import {Navigate, useSearchParams} from "react-router-dom";
+import {useSearchMovies} from "../utilities/Queries";
+import Loader from "./Loader";
+import {LazyLoadImage} from "react-lazy-load-image-component";
+import {EMPTY_IMAGE} from "../utilities/Constants";
 
+const array = ['1', '2', '3', '4'];
 export default function Header({handleMenuClicked}) {
     const [search, setSearch] = useState('');
 
-    const [searchParams] = useSearchParams();
-
-    if (!search && searchParams.get('query')) setSearch(searchParams.get('query'))
-
     const debouncedSearchTerm = useSearchDebounce(search, 300);
 
-    if (debouncedSearchTerm.get('query') && !window.location.href.includes('search')) return <Navigate
-        to={`./search?query=${debouncedSearchTerm.get('query')}`}/>;
+    const {
+        data,
+        isLoading,
+        error
+    } = useSearchMovies(debouncedSearchTerm);
 
     return (
         <div className="header-wraper">
@@ -26,17 +28,34 @@ export default function Header({handleMenuClicked}) {
                 </button>
                 <form className="header__searchbar_form">
                     <div className="header__searchbar_container">
-                        <input autoFocus={window.location.href.includes('search')}
-                               type="text"
+                        <input type="text"
                                value={search}
                                onChange={(e) => {
                                    setSearch(e.target.value)
                                }}
                                className="header__searchbar_input"
                                placeholder="Search"/>
+                        <div className="header__searchbar_autocomplete_container">
+                            {data && data.results.map(movie =>
+                                <div
+                                    onClick={() => window.location.href = '/movie/' + movie.id}
+                                    key={movie.id}
+                                    className="header__searchbar_autocomplete_item">
+                                    <LazyLoadImage placeholder={<Loader/>}
+                                                   className="header__searchbar_autocomplete_item_image"
+                                                   onError={(e) => e.target.src = EMPTY_IMAGE}
+                                                   alt="movie poster"
+                                                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}/>
+                                    <div className="header__searchbar_autocomplete_item_text_container">
+                                        <h4  className="header__searchbar_autocomplete_item_title"> {movie.title}</h4>
+                                        <span  className="header__searchbar_autocomplete_item_year"> {new Date(movie.release_date).getFullYear()}</span>
+                                    </div>
+
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </form>
-
             </div>
         </div>
     )

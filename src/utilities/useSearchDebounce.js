@@ -1,12 +1,12 @@
-import {useEffect} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 export default function useSearchDebounce(value, delay) {
-    const [debouncedValue, setDebouncedValue] = useSearchParams(value);
+
+    const [debouncedValue, setDebouncedValue] = useState(value);
 
     useEffect(() => {
         const handler = setTimeout(() => {
-            value && setDebouncedValue('query=' + value);
+            setDebouncedValue(value);
         }, delay);
 
         return () => {

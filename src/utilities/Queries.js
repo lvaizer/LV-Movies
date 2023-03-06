@@ -42,9 +42,7 @@ export const useGetTopRatedMovies = (start) =>
         });
 
 export const useSearchMovies = (query) =>
-    useInfiniteQuery(
+    useQuery(
         ['search', query],
-        ({pageParam = 1}) => axios(SEARCH_MOVIES_URL + '?query=' + query + '&api_key=' + process.env.REACT_APP_API_KEY + '&page=' + pageParam).then(res => res.data),
-        {
-            getNextPageParam: (lastPage, allPages) => allPages.length + 1
-        });
+        () => axios(SEARCH_MOVIES_URL + '?query=' + query + '&api_key=' + process.env.REACT_APP_API_KEY).then(res => res.data),
+    );
