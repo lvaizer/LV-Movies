@@ -13,6 +13,8 @@ This project was uploaded to [Netlify](https://www.netlify.com/).
 * API calls
 * PWA
 * Pure CSS
+* Integration with Google Search Console
+* Integration with Google Analytics
  
 #### Packages:
 * React-dom
