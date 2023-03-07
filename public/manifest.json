@@ -57,7 +57,9 @@
     }
   ],
   "start_url": "https://lvaizer-movies.netlify.app/",
+  "Scope": "/",
   "display": "standalone",
+  "splash_pages": null,
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "description": "The largest movies library with filters, trailers and more...",
