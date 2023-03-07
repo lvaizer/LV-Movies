@@ -46,3 +46,9 @@ export const useSearchMovies = (query) =>
         ['search', query],
         () => axios(SEARCH_MOVIES_URL + '?query=' + query + '&api_key=' + process.env.REACT_APP_API_KEY).then(res => res.data),
     );
+
+export const useGetMovieVideo = (id) =>
+    useQuery(
+        ['video', id],
+        () => axios(MOVIE_URL + id + '/videos?api_key=' + process.env.REACT_APP_API_KEY).then(res => res.data),
+    );

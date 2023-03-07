@@ -7,13 +7,12 @@ import {LazyLoadImage} from "react-lazy-load-image-component";
 import {EMPTY_IMAGE} from "../utilities/Constants";
 
 export default function Header({handleMenuClicked}) {
+
     const [search, setSearch] = useState('');
 
     const debouncedSearchTerm = useSearchDebounce(search, 300);
 
-    const {
-        data,
-    } = useSearchMovies(debouncedSearchTerm);
+    const {data} = useSearchMovies(debouncedSearchTerm);
 
     return (
         <div className="header-wraper">

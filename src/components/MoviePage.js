@@ -1,6 +1,6 @@
 import '../css/moviePage.css';
 import {Link, useParams} from "react-router-dom";
-import {useGetMovie} from "../utilities/Queries";
+import {useGetMovie, useGetMovieVideo} from "../utilities/Queries";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import Loader from "./Loader";
@@ -14,7 +14,9 @@ export default function MoviePage() {
         data: movie,
         isLoading,
         error
-    } = useGetMovie(id)
+    } = useGetMovie(id);
+
+    const {data: videos} = useGetMovieVideo(id);
 
     function parseTime(minutes) {
         return Math.floor(minutes / 60) + 'h ' + (minutes - (Math.floor(minutes / 60) * 60)) + 'min'
@@ -23,6 +25,17 @@ export default function MoviePage() {
     function parseDate(time) {
         const date = new Date(time);
         return date.toLocaleDateString("en-US", dateOptions)
+    }
+
+    function watchTrailerClicked() {
+        if (!videos || !videos.results) return;
+        for (let i = 0; i < videos.results.length; i++) {
+            const video = videos.results[i];
+            if (video.name.toLowerCase().includes('trailer') && video.site === 'YouTube') {
+                window.open('https://www.youtube.com/watch?v=' + video.key, '_blank');
+                break;
+            }
+        }
     }
 
     if (isLoading) return <Loader/>;
@@ -68,7 +81,8 @@ export default function MoviePage() {
                     </div>
                     <div className="moviePage__details_trailer">
                         <div className="moviePage__details_trailer_button_container">
-                            <button className="moviePage__details_trailer_button">
+                            <button className="moviePage__details_trailer_button"
+                                    onClick={watchTrailerClicked}>
                                 <svg fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M3 22v-20l18 10-18 10z"/>
                                 </svg>
