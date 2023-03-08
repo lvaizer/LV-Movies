@@ -8,7 +8,7 @@ export default function NavBar(props) {
             <div onClick={props.handleMenuClicked}
                  className={`navbar__overlay ${props.toggleMenu && 'open'}`}/>
             <div className={`navbar ${props.toggleMenu && 'open'}`}
-                 style={{backgroundImage: "url('/assets/images/background.jpg')"}}>
+                 style={{backgroundImage: "url('/assets/images/background.webp')"}}>
                 <div className="navbar__container">
                     <div className="navbar__menu">
                         <Link onClick={props.handleMenuClicked} className="navbar__item"
