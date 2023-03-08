@@ -1,5 +1,5 @@
 import '../css/moviePage.css';
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useGetMovie, useGetMovieVideo} from "../utilities/Queries";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -67,11 +67,12 @@ export default function MoviePage() {
                     <div className="moviePage__details_info">
                         <div className="moviePage__details_info_genres">
                             {movie['genres'].map(genre =>
-                                <Link
+                                <div
                                     key={genre.id}
                                     className="moviePage__details_info_genres_item"
-                                    to={"#"}>{genre.name}
-                                </Link>)}
+                                >
+                                    {genre.name}
+                                </div>)}
                         </div>
                         <div className="moviePage__details_info_date">
                             {parseTime(movie.runtime)}
@@ -81,7 +82,8 @@ export default function MoviePage() {
                     </div>
                     <div className="moviePage__details_trailer">
                         <div className="moviePage__details_trailer_button_container">
-                            <button className="moviePage__details_trailer_button" aria-label="trailer"
+                            <button className="moviePage__details_trailer_button"
+                                    aria-label="trailer"
                                     onClick={watchTrailerClicked}>
                                 <svg fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M3 22v-20l18 10-18 10z"/>

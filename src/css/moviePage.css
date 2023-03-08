@@ -87,17 +87,8 @@
     margin-right: .75rem;
     padding: .1rem .5rem;
     font-size: 12px;
-    cursor: pointer;
     text-decoration: none;
     border: 1px solid black;
-}
-
-.moviePage__details_info_genres_item:active {
-    color: black;
-}
-
-.moviePage__details_info_genres_item:hover {
-    background-color: hsl(0, 0%, 90%);
 }
 
 .moviePage__details_info_date {
