@@ -17,7 +17,7 @@ export default function Header({handleMenuClicked}) {
     return (
         <div className="header-wraper">
             <div className="header">
-                <button className="header__toggle-btn" onClick={handleMenuClicked}>
+                <button className="header__toggle-btn" aria-label="menu"  onClick={handleMenuClicked}>
                     <div className="header__hamburger"/>
                     <div className="header__hamburger"/>
                     <div className="header__hamburger"/>

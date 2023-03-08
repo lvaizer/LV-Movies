@@ -81,7 +81,7 @@ export default function MoviePage() {
                     </div>
                     <div className="moviePage__details_trailer">
                         <div className="moviePage__details_trailer_button_container">
-                            <button className="moviePage__details_trailer_button"
+                            <button className="moviePage__details_trailer_button" aria-label="trailer"
                                     onClick={watchTrailerClicked}>
                                 <svg fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M3 22v-20l18 10-18 10z"/>
