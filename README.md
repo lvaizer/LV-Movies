@@ -1,11 +1,11 @@
 # LV-Movies
 ### Liron Vaizer`s Movies Library app
 
-This project was uploaded to [Netlify](https://www.netlify.com/).
+This project was uploaded to [Vercel](https://www.vercel.com/).
 <br/>
 [TMDB](https://www.themoviedb.org/) API's implemented.
 
-## [Click to watch LV-Movies live](https://lvaizer-movies.netlify.app/).
+## [Click to watch LV-Movies live!!!](https://lv-movies.vercel.app/)
 
 #### Implemented:
 * React Hooks
