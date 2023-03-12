@@ -17,7 +17,7 @@ This project was uploaded to [Vercel](https://www.vercel.com/).
 * Integration with Google Analytics
  
 #### Packages:
-* React-dom
+* react-router-dom
 * React-Query
 * axios
 
